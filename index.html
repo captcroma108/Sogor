@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOGOR CAPITAL Account Generator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #0f172a;
+        color: #e5e7eb;
+        padding: 20px;
+    }
+    .container {
+        max-width: 800px;
+        margin: auto;
+        background: #020617;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    h2 {
+        text-align: center;
+        color: #38bdf8;
+    }
+    label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    input, textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        box-sizing: border-box;
+    }
+    button {
+        margin-top: 15px;
+        padding: 10px;
+        width: 100%;
+        background: #22c55e;
+        color: #000;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    button:hover {
+        background: #16a34a;
+    }
+    textarea {
+        height: 400px;
+        margin-top: 15px;
+        background: #020617;
+        color: #e5e7eb;
+        font-family: monospace;
+        white-space: pre;
+        box-sizing: border-box;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+<h2>🚀 SOGOR CAPITAL Message Generator</h2>
+
+<label>Client Name</label>
+<input type="text" id="name" value="ASK">
+
+<label>Login ID</label>
+<input type="text" id="login" value="ASK">
+
+<label>Password</label>
+<input type="text" id="password" value="ASK">
+
+<label>Account Type</label>
+<input type="text" id="type" value="REAL ID NSE/MCX/CME">
+
+<label>Balance</label>
+<input type="text" id="balance" value="ASK">
+
+<label>Mode</label>
+<input type="text" id="mode" value="Liquidate/DNL">
+
+<button onclick="generate()">Generate Message</button>
+<button onclick="copyText()">Copy Message</button>
+
+<textarea id="output" readonly></textarea>
+</div>
+
+<script>
+function generate() {
+    let text = 
+`🌟 𝗦𝗢𝗚𝗢𝗥 𝗖𝗔𝗣𝗜𝗧𝗔𝗟 | 𝗔𝗖𝗖𝗢𝗨𝗡𝗧 𝗔𝗖𝗧𝗜𝗩𝗔𝗧𝗘𝗗 🌟
+━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 𝗔𝗖𝗖𝗢𝗨𝗡𝗧 𝗢𝗩𝗘𝗥𝗩𝗜𝗘𝗪
+🟢 *Status:* ACTIVE
+🏷️ *Type:* ${document.getElementById("type").value}
+💰 *Balance:* ${document.getElementById("balance").value}
+⚙️ *Mode:* ${document.getElementById("mode").value}
+
+👤 𝗨𝗦𝗘𝗥 𝗗𝗘𝗧𝗔𝗜𝗟𝗦
+🔹 *Name:* ${document.getElementById("name").value}
+🌐 *Server:* SOGOR CAPITAL
+
+🔐 𝗦𝗘𝗖𝗨𝗥𝗘 𝗟𝗢𝗚𝗜𝗡 𝗖𝗥𝗘𝗗𝗘𝗡𝗧𝗜𝗔𝗟𝗦
+🆔 *ID:* \`${document.getElementById("login").value}\`
+🔑 *Password:* \`${document.getElementById("password").value}\`
+
+📲 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 & 𝗧𝗥𝗔𝗗𝗘 𝗔𝗡𝗬𝗪𝗛𝗘𝗥𝗘
+━━━━━━━━━━━━━━━━━━━━━━━━━
+🤖 *Android App:* https://bit.ly/4hgyCM1
+🍏 *iOS (Apple):* https://bit.ly/4yvRht3
+💻 *Windows PC:* https://bit.ly/4j1OtPI
+🌍 *Web Portal:* https://web.sogors.com
+
+🎯 _Trade Smart. Trade with Excellence._`;
+
+    document.getElementById("output").value = text;
+}
+
+function copyText() {
+    let output = document.getElementById("output");
+    output.select();
+    document.execCommand("copy");
+    alert("Message Copied Successfully ✅");
+}
+</script>
+
+</body>
+</html>
